@@ -300,6 +300,12 @@
       <entry>Available as of PHP 8.0.0</entry>
      </row>
      <row>
+      <entry><link linkend="ini.opcache.jit-max-trace-length">opcache.jit_max_trace_length</link></entry>
+      <entry>"1024"</entry>
+      <entry>PHP_INI_SYSTEM</entry>
+      <entry>Available as of PHP 8.0.0</entry>
+     </row>
+     <row>
       <entry><link linkend="ini.opcache.jit-max-exit-counters">opcache.jit_max_exit_counters</link></entry>
       <entry>"8192"</entry>
       <entry>PHP_INI_SYSTEM</entry>
@@ -1116,6 +1122,19 @@
       Maximum number of side traces a root trace may have. The side trace is another execution flow that does not
       follow the path of compiled root trace. Side traces belonging to the same root trace will not be compiled
       if it reaches this limit.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="ini.opcache.jit-max-trace-length">
+    <term>
+     <parameter>opcache.jit_max_trace_length</parameter>
+     <type>int</type>
+    </term>
+    <listitem>
+     <para>
+      Max length of a single trace. A long trace generates long JITTed code, which influences the performance 
+      slightly. opcache.jit_max_trace_length range is [4,1024] and the single trace will not be compiled if it
+      reaches this limit.
      </para>
     </listitem>
    </varlistentry>
